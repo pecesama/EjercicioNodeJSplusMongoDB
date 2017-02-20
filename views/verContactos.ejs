@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ver contactos</title>
+	</head>
+	<body>
+		<table border="1" align="center">
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido Paterno</th>
+				<th>Apellido Materno</th>
+				<th>Dirección</th>
+				<th>Teléfono</th>
+				<th>Email</th>
+				<th>Opciones</th>
+			</tr>
+			<% contactos.forEach(function(contacto){ %><!--Utilizando un for each, recorremos los esquemas que obtenemos como resultado de la petición POST que realizamos desde la vista anterior-->
+			<tr>
+				<form name="contactos" id="contactos" align="center" method="POST">
+					<input hidden type="text" name="id" id="id" value="<%=contacto._id%>">
+					<td><!--Imprimimos el atributo nombre del esquema actual-->
+						<input name="nombre" id="nombre" type="text" value="<%=contacto.nombre%>" readonly>
+					</td>
+					<td><!--Imprimimos el atributo apellidoP del esquema actual-->
+						<input name="apellidoP" id="apellidoP" type="text" value="<%=contacto.apellidoP%>" readonly>
+					</td>
+					<td><!--Imprimimos el atributo apellidoM del esquema actual-->
+						<input name="apellidoM" id="apellidoM" type="text" value="<%=contacto.apellidoM%>" readonly>
+					</td>
+					<td><!--Imprimimos el atributo direccion del esquema actual-->
+						<input name="direccion" id="direccion" type="text" value="<%=contacto.direccion%>" readonly>
+					</td>
+					<td><!--Imprimimos el atributo telefono del esquema actual-->
+						<input name="telefono" id="telefono" type="text" value="<%=contacto.telefono%>" readonly>
+					</td>
+					<td><!--Imprimimos el atributo email del esquema actual-->
+						<input name="email" id="email" type="text" value="<%=contacto.email%>" readonly>
+					</td>
+					<td>
+						<input type="submit" value="Editar" formaction="/encontrar">
+						<input type="submit" value="Eliminar" formaction="/eliminar">
+					</td>
+				</form>
+			</tr>
+			<% }); %>
+		</table>
+		<br><br>
+		<form action="/" align="center" method="GET">
+			<input type="submit" value="Volver">
+		</form>
+	</body>
+</html>

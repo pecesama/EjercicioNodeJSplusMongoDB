@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Editar contacto</title>
+	</head>
+	<body>
+		<form align="center" action="/editar" method="POST"><!--Mandamos la petición POST al router editarRouter, el cual tiene el alias /editar-->
+			<input hidden type="text" name="id" id="id" value="<%=contacto._id%>">
+			Nombre<br>
+			<input name="nombre" id="nombre" type="text" value="<%=contacto.nombre%>"><br>
+			Apellido Paterno<br>
+			<input name="apellidoP" id="apellidoP" type="text" value="<%=contacto.apellidoP%>"><br>
+			Apellido Materno<br>
+			<input name="apellidoM" id="apellidoM" type="text" value="<%=contacto.apellidoM%>"><br>
+			Dirección<br>
+			<input name="direccion" id="direccion" type="text" value="<%=contacto.direccion%>"><br>
+			Teléfono<br>
+			<input name="telefono" id="telefono" type="text" value="<%=contacto.telefono%>"><br>
+			E-mail<br>
+			<input name="email" id="email" type="text" value="<%=contacto.email%>"><br>
+			<br>
+			<input type="submit" value="Guardar cambios">
+		</form>
+		<br><br>
+		<form align="center" action="/mostrar" method="POST">
+			<input type="submit" value="Volver" >
+		</form>
+	</body>
+</html>

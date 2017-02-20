@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nuevo contacto</title>
+	</head>
+	<body>
+		<form align="center" action="/guardar" method="POST"><!--Mandamos la petición POST al router guardarRouter, el cual tiene el alias /guardar-->
+			Nombre<br>
+			<input type="text" name="nombre" id="nombre"><br>
+			Apellido paterno<br>
+			<input type="text" name="apellidoP" id="apellidoP"><br>
+			Apellido materno<br>
+			<input type="text" name="apellidoM" id="apellidoM"><br>
+			Dirección<br>
+			<input type="text" name="direccion" id="direccion"><br>
+			Teléfono<br>
+			<input type="text" name="telefono" id="telefono"><br>
+			E-mail<br>
+			<input type="text" name="email" id="email"><br>
+			<br>
+			<input type="submit" value="Guardar contacto">
+		</form>
+		<br><br>
+		<form align="center" action="/mostrar" method="POST"><!--Creamos un botón con una petición POST hacia el router mostrarRouter, el cual tiene el alias /mostrar-->
+			<input type="submit" value="Ver contactos">
+		</form>
+	</body>
+</html>

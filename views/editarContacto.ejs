@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<form align="center" action="/editar" method="POST"><!--Mandamos la petición POST al router editarRouter, el cual tiene el alias /editar-->
-			<input hidden type="text" name="id" id="id" value="<%=contacto._id%>">
+			<input hidden type="text" name="id" id="id" value="<%=contacto.id%>">
 			Nombre<br>
 			<input name="nombre" id="nombre" type="text" value="<%=contacto.nombre%>"><br>
 			Apellido Paterno<br>
